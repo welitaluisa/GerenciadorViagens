@@ -122,8 +122,6 @@ public class ViagemServices {
 	public Viagem alterar(ViagemDto viagemDto, Long id) {
 
 		Viagem viagemExistente = viagemRepository.findOne(id);
-		if (viagemExistente != null) {
-		}
 
 		// iremos ter um nullPointerException aqui.
 		viagemExistente.setLocalDeDestino(viagemDto.getLocalDeDestino());
