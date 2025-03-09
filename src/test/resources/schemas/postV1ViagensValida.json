@@ -1,0 +1,104 @@
+{
+  "$id": "http://example.com/example.json",
+  "type": "object",
+  "default": {},
+  "title": "Root Schema",
+  "required": [
+    "data",
+    "errors"
+  ],
+  "properties": {
+    "data": {
+      "type": "object",
+      "default": {},
+      "title": "The data Schema",
+      "required": [
+        "id",
+        "localDeDestino",
+        "dataPartida",
+        "dataRetorno",
+        "acompanhante",
+        "regiao"
+      ],
+      "properties": {
+        "id": {
+          "type": "integer",
+          "default": 0,
+          "title": "The id Schema",
+          "examples": [
+            1
+          ]
+        },
+        "localDeDestino": {
+          "type": "string",
+          "default": "",
+          "title": "The localDeDestino Schema",
+          "examples": [
+            "Fortaleza"
+          ]
+        },
+        "dataPartida": {
+          "type": "string",
+          "default": "",
+          "title": "The dataPartida Schema",
+          "examples": [
+            "2024-05-05"
+          ]
+        },
+        "dataRetorno": {
+          "type": "string",
+          "default": "",
+          "title": "The dataRetorno Schema",
+          "examples": [
+            "2024-07-21"
+          ]
+        },
+        "acompanhante": {
+          "type": "string",
+          "default": "",
+          "title": "The acompanhante Schema",
+          "examples": [
+            "Astolfo"
+          ]
+        },
+        "regiao": {
+          "type": "string",
+          "default": "",
+          "title": "The regiao Schema",
+          "examples": [
+            "Norte"
+          ]
+        }
+      },
+      "examples": [{
+        "id": 1,
+        "localDeDestino": "Fortaleza",
+        "dataPartida": "2024-05-05",
+        "dataRetorno": "2024-07-21",
+        "acompanhante": "Astolfo",
+        "regiao": "Norte"
+      }]
+    },
+    "errors": {
+      "type": "array",
+      "default": [],
+      "title": "The errors Schema",
+      "items": {},
+      "examples": [
+        []
+      ]
+    }
+  },
+  "examples": [{
+    "data": {
+      "id": 1,
+      "localDeDestino": "Fortaleza",
+      "dataPartida": "2024-05-05",
+      "dataRetorno": "2024-07-21",
+      "acompanhante": "Astolfo",
+      "regiao": "Norte"
+    },
+    "errors": []
+  }]
+}
+

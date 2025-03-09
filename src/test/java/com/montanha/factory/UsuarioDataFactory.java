@@ -9,5 +9,12 @@ public class UsuarioDataFactory {
         usuarioAdmin.setSenha("654321");
         return usuarioAdmin;
     }
-    
+
+    public static Usuario criarUsuario() {
+        Usuario usuarioAdmin = new Usuario();
+        usuarioAdmin.setEmail("usuario@email.com");
+        usuarioAdmin.setSenha("123456");
+        return usuarioAdmin;
+    }
+
 }
