@@ -1,5 +1,7 @@
 package com.montanha.gerenciador;
 
+import com.montanha.gerenciador.entities.Viagem;
+import com.montanha.gerenciador.repositories.ViagemRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
@@ -13,6 +15,8 @@ import com.montanha.gerenciador.enums.PerfilEnum;
 import com.montanha.gerenciador.repositories.UsuarioRepository;
 import com.montanha.utils.SenhaUtils;
 
+import java.util.Date;
+
 @SpringBootApplication
 @Configuration
 @ComponentScan("com.montanha")
@@ -20,6 +24,9 @@ public class GerenciadorViagensMontanhaApplication {
 
 	@Autowired
 	private UsuarioRepository usuarioRepository;
+
+	@Autowired
+	private ViagemRepository viagemRepository;
 	
 	public static void main(String[] args) {
 		SpringApplication.run(GerenciadorViagensMontanhaApplication.class, args);
@@ -28,20 +35,26 @@ public class GerenciadorViagensMontanhaApplication {
 	@Bean
 	public CommandLineRunner commandLineRunner() {
 		return args -> {
-			
+
 			Usuario usuario = new Usuario();
 			usuario.setEmail("usuario@email.com");
 			usuario.setPerfil(PerfilEnum.ROLE_USUARIO);
 			usuario.setSenha(SenhaUtils.gerarBCrypt("123456"));
 			this.usuarioRepository.save(usuario);
-			
+
 			Usuario admin = new Usuario();
 			admin.setEmail("admin@email.com");
 			admin.setPerfil(PerfilEnum.ROLE_ADMIN);
 			admin.setSenha(SenhaUtils.gerarBCrypt("654321"));
 			this.usuarioRepository.save(admin);
-			
+
+			Viagem viagemASerRetornada = new Viagem();
+			viagemASerRetornada.setLocalDeDestino("Osasco");
+			viagemASerRetornada.setDataPartida(new Date());
+			viagemASerRetornada.setDataRetorno(new Date());
+			viagemASerRetornada.setAcompanhante("Felipe");
+			viagemASerRetornada.setRegiao("Sudoeste");
+			this.viagemRepository.save(viagemASerRetornada);
 		};
 	}
-
 }

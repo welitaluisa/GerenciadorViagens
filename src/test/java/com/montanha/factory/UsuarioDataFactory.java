@@ -10,11 +10,11 @@ public class UsuarioDataFactory {
         return usuarioAdmin;
     }
 
-    public static Usuario criarUsuario() {
-        Usuario usuarioAdmin = new Usuario();
-        usuarioAdmin.setEmail("usuario@email.com");
-        usuarioAdmin.setSenha("123456");
-        return usuarioAdmin;
+    public static Usuario criarUsuarioComum() {
+        Usuario usuarioComum = new Usuario();
+        usuarioComum.setEmail("usuario@email.com");
+        usuarioComum.setSenha("123456");
+        return usuarioComum;
     }
 
 }
